@@ -8,6 +8,9 @@
         public function admin() {
             require_once('views/pages/admin.php');
         }
+        public function signup() {
+        require_once('views/pages/signup.php');
+    }
         public function error() {
             require_once('views/pages/error.php');
         }
