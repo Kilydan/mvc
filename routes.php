@@ -12,6 +12,10 @@ function call($controller, $action)
             require_once('models/post.php');
             $controller = new PostsController();
             break;
+        case 'signup':
+            require_once('models/signup.php');
+            $controller = new SignupController();
+            break;
     }
 
     $controller->{$action}();
@@ -19,7 +23,8 @@ function call($controller, $action)
 
 // we're adding an entry for the new controller and its actions
 $controllers = array('pages' => ['home', 'admin', 'signup', 'error'],
-                     'posts' => ['index', 'show']);
+                     'posts' => ['index', 'show'],
+                     'users' => ['signup']);
 
 if (array_key_exists($controller, $controllers)) {
     if (in_array($action, $controllers[$controller])) {
