@@ -1,12 +1,12 @@
 <?php
-    class SignupController {
+    class AccountController {
         public function signup(){
-            dump('test');
-            die();
             $username = $_GET['username'];
             $password = $_GET['password'];
-            $signup = Signup::create($username, $password);
-            require_once('views/users/signup.php');
+            $signup = Account::create($username, $password);
+        }
+        public function login(){
+            require_once('views/users/login.php');
         }
         public function logout(){
 
@@ -14,7 +14,4 @@
         public function edit(){
 
         }
-        public function login(){
-
-    }
     }

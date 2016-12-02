@@ -16,15 +16,7 @@ session_start();
         </div>
         <div class="main">
             <?php require_once('routes.php'); ?>
-            <div class="debugger">
-                <?php
 
-                $url = $_SERVER['REQUEST_URI'];
-                echo $url ;?><br /> <br /><?php
-                print_r(explode("action=",  " " .$url));
-
-                ?>
-            </div>
 
 
         </div>
