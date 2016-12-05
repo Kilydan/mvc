@@ -1,0 +1,1 @@
+de gebruiker <?php echo $username; ?> word nu ingelogd

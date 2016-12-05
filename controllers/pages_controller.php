@@ -24,6 +24,11 @@ class PagesController
         require_once('views/pages/login.php');
     }
 
+    public function logout()
+    {
+        require_once('views/pages/logout.php');
+    }
+
     public function error()
     {
         require_once('views/pages/error.php');
