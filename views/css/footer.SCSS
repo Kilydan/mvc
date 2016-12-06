@@ -1,3 +1,11 @@
 .footer{
+    position: absolute;
+    bottom: 0;
+    color: white;
     background: #257cab;
+    height: 100px;
+    width: 100%;
+}
+.footer.row{
+    width:100%;
 }

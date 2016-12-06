@@ -46,12 +46,14 @@ class Account
                     $_SESSION['user_session'] = $userRow['id'];
                     $_SESSION['username'] = $userRow['username'];
                     $_SESSION['role'] = $userRow['role'];
-                    require_once('views/users/login.php');
+                    header("location: /");
+                    exit();
                 } else {
                     return false;
                 }
             } else {
-                echo "verkeerde username of wachtwoord, probeer het opnieuw!";
+                echo "verkeerde username of wachtwoord, probeer het opnieuw! <br /> u word over seconden terug ";
+                header("Refresh:3; url=/?controller=pages&action=login", true, 303);
             }
         } catch (PDOException $e) {
             echo $e->getMessage();
@@ -73,7 +75,8 @@ class Account
     {
         session_destroy();
         unset($_SESSION['user_session']);
-        return true;
+        header("location: /");
+        exit();
     }
 
     public static function get_role($username)
