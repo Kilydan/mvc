@@ -2,9 +2,12 @@
 if (isset($_SESSION['user_session'])) {
     if ($_SESSION['role'] == 2) {
         ?>
-
-
+        <h1>Admin Pannel</h1>
         <p>test</p>
+        <a href="?controller=admin&action=autos">Auto's</a><br />
+        <a href="?controller=admin&action=gebruikers">Gebruikers</a><br />
+        <a href="?controller=admin&action=reserveringen">Reserveringen</a>
+
 
 
         <?php

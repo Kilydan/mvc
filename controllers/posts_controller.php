@@ -8,7 +8,7 @@
 
         public function show() {
             //we expect a url of form ?controller-post&action=show&id=x
-            // without an id we just redirect to the error page as we nede the post id to find it in the database
+            // without an id we just redirect to the error page as we need the post id to find it in the database
             if (!isset($_GET['id']))
                 return call('pages', 'error');
 

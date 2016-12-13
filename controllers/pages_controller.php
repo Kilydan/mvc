@@ -11,9 +11,8 @@ class PagesController
 
     public function admin()
     {
-        require_once('views/pages/admin.php');
+        require_once('views/pages/admin/admin.php');
     }
-
     public function signup()
     {
         require_once('views/pages/signup.php');

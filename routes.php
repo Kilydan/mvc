@@ -7,6 +7,9 @@ function call($controller, $action)
         case 'pages':
             $controller = new PagesController();
             break;
+        case 'admin':
+            $controller = new AdminController();
+            break;
         case 'posts':
             // we need the model to query the database later in the controller
             require_once('models/post.php');
@@ -23,6 +26,7 @@ function call($controller, $action)
 
 // we're adding an entry for the new controller and its actions
 $controllers = array('pages' => ['home', 'admin', 'signup', 'error', 'login'],
+                     'admin' => ['autos', 'gebruikers', 'reserveringen'],
                      'posts' => ['index', 'show'],
                      'account' => ['signup', 'login', 'logout']);
 

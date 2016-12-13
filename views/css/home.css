@@ -1,0 +1,17 @@
+body {
+  height: 100%; }
+
+.row {
+  margin: auto !important; }
+
+.wrapper {
+  min-height: 100%;
+  position: relative; }
+  .wrapper .main {
+    padding-bottom: 100px; }
+    .wrapper .main .debugger {
+      background-color: #fef1f1;
+      margin: 40px;
+      height: 100%; }
+
+/*# sourceMappingURL=home.css.map */
