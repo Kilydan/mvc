@@ -1,5 +1,5 @@
 <?php
-    class PostsController {
+    class CarController {
         public function index() {
             // we store all the posts in a variable
             $posts = Post::all();

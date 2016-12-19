@@ -7,11 +7,15 @@ body {
 .wrapper {
   min-height: 100%;
   position: relative; }
-  .wrapper .main {
-    padding-bottom: 100px; }
-    .wrapper .main .debugger {
-      background-color: #fef1f1;
-      margin: 40px;
-      height: 100%; }
+  .wrapper .main-wrapper {
+    position: absolute;
+    top: 0;
+    z-index: -1; }
+    .wrapper .main-wrapper .main {
+      padding-bottom: 100px; }
+      .wrapper .main-wrapper .main .debugger {
+        background-color: #fef1f1;
+        margin: 40px;
+        height: 100%; }
 
 /*# sourceMappingURL=home.css.map */

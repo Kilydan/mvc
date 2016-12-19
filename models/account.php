@@ -3,29 +3,45 @@
 class Account
 {
     public $id;
+    public $name;
     public $username;
     public $password;
+    public $address;
+    public $postalcode;
+    public $place;
 
-    public function __construct($id, $username, $password)
+    public function __construct($id, $name, $username, $password, $address, $postalcode, $place)
     {
         $this->id = $id;
+        $name = $_GET['name'];
         $username = $_GET['username'];
         $password = $_GET['password'];
+        $address = $_GET['address'];
+        $postalcode = $_GET['postalcode'];
+        $place = $_GET['place'];
+        $this->name = $name;
         $this->username = $username;
         $this->password = $password;
+        $this->address = $address;
+        $this->postalcode = $postalcode;
+        $this->place = $place;
     }
 
-    public static function create($username, $password)
+    public static function create($name, $username, $password, $address, $postalcode, $place)
     {
         try {
             $db = Db::getInstance();
             // check if username already exists
             $password_hash = password_hash($password, PASSWORD_BCRYPT);
-            $ins = $db->prepare("INSERT INTO users(username, userpw)
-                               VALUES(:username, :userpw)");
+            $ins = $db->prepare("INSERT INTO klant(klant_naam, klant_email, klant_wachtwoord, klant_adres, klant_postcode, klant_plaats)
+                               VALUES(:klant_naam, :klant_email, :klant_wachtwoord, :klant_adres, :klant_postcode, :klant_plaats)");
 
-            $ins->bindParam(":username", $username);
-            $ins->bindParam(":userpw", $password_hash);
+            $ins->bindParam(":klant_naam", $name);
+            $ins->bindParam(":klant_email", $username);
+            $ins->bindParam(":klant_wachtwoord", $password_hash);
+            $ins->bindParam(":klant_adres", $address);
+            $ins->bindParam(":klant_postcode", $postalcode);
+            $ins->bindParam(":klant_plaats", $place);
             $ins->execute();
 
             return $ins;

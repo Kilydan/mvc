@@ -1,10 +1,21 @@
 .header {
   height: 100px;
+  background-color: rgba(0, 3, 15, 0.70);
   .container {
     .menu {
       a {
         padding: 10px !important;
+        margin: 0px;
       }
     }
   }
+  .logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+    color: #fff;
+  }
+}
+.mini-header{
+  color: #fff;
+  background-color: rgba(0, 3, 15, 0.85);
 }

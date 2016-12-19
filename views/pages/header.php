@@ -14,7 +14,7 @@
             }
         }
         ?>
-        <a href="?controller=posts&action=index">Posts</a>
+        <a href="?controller=car&action=index">Posts</a>
         <?php
         if (isset($_SESSION['user_session'])) {
             ?>
@@ -28,7 +28,7 @@
         }
         ?>
     </div>
-    <div class="searchbar col-md-2">
-        hihi
-    </div>
+<!--    <div class="searchbar col-md-2">-->
+<!--        hihi-->
+<!--    </div>-->
 </div>

@@ -1,9 +1,13 @@
 <?php
     class AccountController {
         public function signup(){
+            $name = $_GET['name'];
             $username = $_GET['username'];
             $password = $_GET['password'];
-            $signup = Account::create($username, $password);
+            $address = $_GET['address'];
+            $postalcode = $_GET['postalcode'];
+            $place = $_GET['place'];
+            $signup = Account::create($name, $username, $password, $address, $postalcode, $place);
             require_once('views/users/login.php');
         }
         public function login(){

@@ -1,11 +1,19 @@
 .sliders{
   .image{
-
+    img{
+  width:100%;
+  }
   }
   .slogan{
     h3{
-      color: #A71F2D;
+      margin:0px !important;
+      padding: 20px;
+      background: #dbdbdb;
+      color: #257cab;
       text-align: center;
     }
   }
+}
+body{
+  background-color: black;
 }

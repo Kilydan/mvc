@@ -7,15 +7,20 @@ body{
 .wrapper{
   min-height: 100%;
   position: relative;
-  .main {
-    padding-bottom: 100px;
-    .container{
+  .main-wrapper{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    .main {
+      padding-bottom: 100px;
+      .container{
 
-    }
-    .debugger {
-      background-color: #fef1f1;
-      margin: 40px;
-      height: 100%;
+      }
+      .debugger {
+        background-color: #fef1f1;
+        margin: 40px;
+        height: 100%;
+      }
     }
   }
 }
