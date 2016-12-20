@@ -33,15 +33,15 @@ class Account
             $db = Db::getInstance();
             // check if username already exists
             $password_hash = password_hash($password, PASSWORD_BCRYPT);
-            $ins = $db->prepare("INSERT INTO klant(klant_naam, klant_email, klant_wachtwoord, klant_adres, klant_postcode, klant_plaats)
-                               VALUES(:klant_naam, :klant_email, :klant_wachtwoord, :klant_adres, :klant_postcode, :klant_plaats)");
+            $ins = $db->prepare('INSERT INTO gebruiker(gebruiker_naam, gebruiker_email, gebruiker_wachtwoord, gebruiker_adres, gebruiker_postcode, gebruiker_plaats)
+                               VALUES(:gebruiker_naam, :gebruiker_email, :gebruiker_wachtwoord, :gebruiker_adres, :gebruiker_postcode, :gebruiker_plaats)');
 
-            $ins->bindParam(":klant_naam", $name);
-            $ins->bindParam(":klant_email", $username);
-            $ins->bindParam(":klant_wachtwoord", $password_hash);
-            $ins->bindParam(":klant_adres", $address);
-            $ins->bindParam(":klant_postcode", $postalcode);
-            $ins->bindParam(":klant_plaats", $place);
+            $ins->bindParam(":gebruiker_naam", $name);
+            $ins->bindParam(":gebruiker_email", $username);
+            $ins->bindParam(":gebruiker_wachtwoord", $password_hash);
+            $ins->bindParam(":gebruiker_adres", $address);
+            $ins->bindParam(":gebruiker_postcode", $postalcode);
+            $ins->bindParam(":gebruiker_plaats", $place);
             $ins->execute();
 
             return $ins;
@@ -54,21 +54,21 @@ class Account
     {
         try {
             $db = Db::getInstance();
-            $req = $db->prepare("SELECT * FROM users WHERE username=:username LIMIT 1");
+            $req = $db->prepare("SELECT * FROM gebruiker WHERE gebruiker_email=:username LIMIT 1");
             $req->execute(array(':username' => $username));
             $userRow = $req->fetch(PDO::FETCH_ASSOC);
             if ($req->rowCount() > 0) {
-                if (password_verify($password, $userRow['userpw'])) {
-                    $_SESSION['user_session'] = $userRow['id'];
-                    $_SESSION['username'] = $userRow['username'];
-                    $_SESSION['role'] = $userRow['role'];
+                if (password_verify($password, $userRow['gebruiker_wachtwoord'])) {
+                    $_SESSION['user_session'] = $userRow['gebruiker_id'];
+                    $_SESSION['username'] = $userRow['gebruiker_naam'];
+                    $_SESSION['role'] = $userRow['role_id'];
                     header("location: /");
                     exit();
                 } else {
                     return false;
                 }
             } else {
-                echo "verkeerde username of wachtwoord, probeer het opnieuw! <br /> u word over seconden terug ";
+                echo "verkeerde username of wachtwoord, probeer het opnieuw! <br /> u word over 3 seconden terug ";
                 header("Refresh:3; url=/?controller=pages&action=login", true, 303);
             }
         } catch (PDOException $e) {
@@ -95,11 +95,11 @@ class Account
         exit();
     }
 
-    public static function get_role($username)
+    public static function get_role($gebruiker_email)
     {
         $db = Db::getInstance();
-        $req = $db->prepare("SELECT * FROM users WHERE username=:username LIMIT 1");
-        $req->execute(array(':username' => $username));
+        $req = $db->prepare("SELECT * FROM gebruiker WHERE gebruiker_email=:gebruiker_email LIMIT 1");
+        $req->execute(array(':gebruiker_email' => $gebruiker_email));
         print_r($req);
     }
 

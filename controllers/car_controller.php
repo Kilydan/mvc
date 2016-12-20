@@ -2,8 +2,8 @@
     class CarController {
         public function index() {
             // we store all the posts in a variable
-            $posts = Post::all();
-            require_once('views/posts/index.php');
+            $cars = Car::all();
+            require_once('views/pages/admin/autos.php');
         }
 
         public function show() {
@@ -14,6 +14,6 @@
 
             // we use the given id to get the right post
             $post = Post::find($_GET['id']);
-            require_once('views/posts/show.php');
+           // require_once('views/cars/show.php');
         }
     }

@@ -1,3 +1,8 @@
 <div class="container">
-        mini information bar
+    <?php
+    if (isset($_SESSION['user_session'])) {
+        echo $_SESSION['username'];
+    }else{
+        echo 'Welkom!';
+    }?>
 </div>

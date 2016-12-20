@@ -7,7 +7,7 @@
         <!--    <a href="?controller=pages&action=login">login</a>-->
         <?php
         if (isset($_SESSION['user_session'])) {
-            if ($_SESSION['role'] == 2) {
+            if ($_SESSION['role'] == 3) {
                 ?>
                 <a href="?controller=pages&action=admin">Admin</a>
                 <?php

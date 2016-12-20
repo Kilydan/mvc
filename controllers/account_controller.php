@@ -14,7 +14,7 @@
             $username = $_GET['username'];
             $password = $_GET['password'];
             $login = Account::login($username, $password);
-//            require_once('views/users/login.php');
+            require_once('views/users/login.php');
         }
         public function is_loggedin(){
         }
@@ -25,7 +25,7 @@
         public function edit(){
 
         }
-        public function get_role($username){
-            $role = Account::get_role($username);
+        public function get_role($gebruiker_email){
+            $role = Account::get_role($gebruiker_email);
         }
     }

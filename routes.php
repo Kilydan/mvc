@@ -10,7 +10,7 @@ function call($controller, $action)
         case 'admin':
             $controller = new AdminController();
             break;
-        case 'posts':
+        case 'car':
             // we need the model to query the database later in the controller
             require_once('models/car.php');
             $controller = new CarController();
