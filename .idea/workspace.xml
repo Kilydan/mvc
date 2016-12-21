@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44579a7c-4c04-4fb5-af25-5a97fd1cae32" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/orders_controller.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/orders.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/cars/factuur.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/cars/huren.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/pages/voorwaardes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/users/account.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/users/edit_account.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/account_controller.php" afterPath="$PROJECT_DIR$/controllers/account_controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/car_controller.php" afterPath="$PROJECT_DIR$/controllers/car_controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/pages_controller.php" afterPath="$PROJECT_DIR$/controllers/pages_controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/account.php" afterPath="$PROJECT_DIR$/models/account.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/car.php" afterPath="$PROJECT_DIR$/models/car.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.php" afterPath="$PROJECT_DIR$/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cars/index.php" afterPath="$PROJECT_DIR$/views/cars/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cars/show.php" afterPath="$PROJECT_DIR$/views/cars/show.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/css/home.css" afterPath="$PROJECT_DIR$/views/css/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/css/home.css.map" afterPath="$PROJECT_DIR$/views/css/home.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/css/home.scss" afterPath="$PROJECT_DIR$/views/css/home.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/admin/admin.php" afterPath="$PROJECT_DIR$/views/pages/admin/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/admin/autos.php" afterPath="$PROJECT_DIR$/views/pages/admin/autos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/admin/reserveringen.php" afterPath="$PROJECT_DIR$/views/pages/admin/reserveringen.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/header.php" afterPath="$PROJECT_DIR$/views/pages/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/signup.php" afterPath="$PROJECT_DIR$/views/pages/signup.php" />
     </list>
     <ignored path="mvc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -550,7 +527,7 @@
       <workItem from="1482267122778" duration="7655000" />
       <workItem from="1482307071306" duration="7787000" />
       <workItem from="1482315138608" duration="14178000" />
-      <workItem from="1482345533308" duration="10430000" />
+      <workItem from="1482345533308" duration="10499000" />
     </task>
     <task id="LOCAL-00001" summary="hihih">
       <created>1480521046605</created>
@@ -573,11 +550,18 @@
       <option name="project" value="LOCAL" />
       <updated>1482246834314</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="pdate">
+      <created>1482356065703</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1482356065703</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139648000" />
+    <option name="totallyTimeSpent" value="139717000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -622,7 +606,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="hihih" />
     <MESSAGE value="kleine update" />
-    <option name="LAST_COMMIT_MESSAGE" value="kleine update" />
+    <MESSAGE value="pdate" />
+    <option name="LAST_COMMIT_MESSAGE" value="pdate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
