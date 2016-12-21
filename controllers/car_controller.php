@@ -14,11 +14,12 @@
         public function show() {
             //we expect a url of form ?controller-post&action=show&id=x
             // without an id we j   ust redirect to the error page as we need the post id to find it in the database
-            if (!isset($_GET['kenteken']))
+            $auto_kenteken = $_GET['kenteken'];
+            if (!isset($auto_kenteken))
                 return call('car', 'error');
 
             // we use the given id to get the right post
-            $car = Car::find($_GET['kenteken']);
+            $car = Car::find($auto_kenteken);
            require_once('views/cars/show.php');
         }
         public function rent() {

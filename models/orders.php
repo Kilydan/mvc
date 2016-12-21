@@ -18,7 +18,7 @@ class Orders
     public static function index(){
         $list = [];
         $db = Db::getInstance();
-        $req = $db->query('SELECT * FROM reservering');
+        $req = $db->query('SELECT * FROM reservering ORDER BY auto_gereserveerd_van');
 
         foreach ($req->fetchAll() as $order){
             $list[] = new Orders($order['auto_kenteken'], $order['factuurnummer'], $order['auto_gereserveerd_van'], $order['auto_gereserveerd_tot']);

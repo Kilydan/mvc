@@ -38,12 +38,17 @@ class Car
     {
         $db = Db::getInstance();
         // we make sure the $id is an int
-        $req = $db->prepare('SELECT * FROM autos WHERE auto_kenteken = :kenteken');
+        $req = $db->prepare('SELECT * FROM autos WHERE auto_kenteken=:auto_kenteken');
         // the query was prepared, now we replace :id with our actual $id value
-        $req->execute(array('kenteken' => $auto_kenteken));
+        $req->execute(array('auto_kenteken' => $auto_kenteken));
         $carRow = $req->fetch(PDO::FETCH_ASSOC);
         if($req->rowCount() > 0){
             $_SESSION['auto_kenteken'] = $carRow['auto_kenteken'];
+            $_SESSION['auto_merk'] = $carRow['auto_merk'];
+            $_SESSION['auto_type'] = $carRow['auto_type'];
+            $_SESSION['auto_prijs'] = $carRow['auto_prijs'];
+            $_SESSION['auto_beschrijving'] = $carRow['auto_beschrijving'];
+            $_SESSION['auto_image'] = $carRow['auto_image'];
         }
         $car = $req->fetch();
         return new Car($car['auto_kenteken'], $car['auto_merk'], $car['auto_type'], $car['auto_prijs'], $car['auto_beschrijving'], $car['auto_image']);
