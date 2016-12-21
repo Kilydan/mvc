@@ -33,8 +33,9 @@ class Account
             $db = Db::getInstance();
             // check if username already exists
             $password_hash = password_hash($password, PASSWORD_BCRYPT);
-            $ins = $db->prepare('INSERT INTO gebruiker(gebruiker_naam, gebruiker_email, gebruiker_wachtwoord, gebruiker_adres, gebruiker_postcode, gebruiker_plaats)
-                               VALUES(:gebruiker_naam, :gebruiker_email, :gebruiker_wachtwoord, :gebruiker_adres, :gebruiker_postcode, :gebruiker_plaats)');
+            $ins = $db->prepare('
+INSERT INTO gebruiker(gebruiker_naam, gebruiker_email, gebruiker_wachtwoord, gebruiker_adres, gebruiker_postcode, gebruiker_plaats)
+VALUES(:gebruiker_naam, :gebruiker_email, :gebruiker_wachtwoord, :gebruiker_adres, :gebruiker_postcode, :gebruiker_plaats)');
 
             $ins->bindParam(":gebruiker_naam", $name);
             $ins->bindParam(":gebruiker_email", $username);
@@ -61,6 +62,11 @@ class Account
                 if (password_verify($password, $userRow['gebruiker_wachtwoord'])) {
                     $_SESSION['user_session'] = $userRow['gebruiker_id'];
                     $_SESSION['username'] = $userRow['gebruiker_naam'];
+                    $_SESSION['user_email'] = $userRow['gebruiker_email'];
+                    $_SESSION['user_password'] = $userRow['gebruiker_wachtwoord'];
+                    $_SESSION['user_adres'] = $userRow['gebruiker_adres'];
+                    $_SESSION['user_postcode'] = $userRow['gebruiker_postcode'];
+                    $_SESSION['user_place'] = $userRow['gebruiker_plaats'];
                     $_SESSION['role'] = $userRow['role_id'];
                     header("location: /");
                     exit();
@@ -76,6 +82,26 @@ class Account
         }
     }
 
+    public static function edit($name, $username, $address, $postalcode, $place){
+        try {
+            $db = Db::getInstance();
+            // check if username already exists
+//            $password_hash = password_hash($password, PASSWORD_BCRYPT);
+            $ins = $db->prepare('UPDATE gebruiker SET gebruiker_naam=:gebruiker_naam, gebruiker_email=:gebruiker_email, gebruiker_adres=:gebruiker_adres, gebruiker_postcode=:gebruiker_postcode, gebruiker_plaats=:gebruiker_plaats WHERE gebruiker_email=:gebruiker_email');
+
+            $ins->bindParam(":gebruiker_naam", $name);
+            $ins->bindParam(":gebruiker_email", $username);
+//            $ins->bindParam(":gebruiker_wachtwoord", $password_hash);
+            $ins->bindParam(":gebruiker_adres", $address);
+            $ins->bindParam(":gebruiker_postcode", $postalcode);
+            $ins->bindParam(":gebruiker_plaats", $place);
+            $ins->execute();
+
+            return $ins;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
     public function is_loggedin()
     {
         if (isset($_SESSION['user_session'])) {

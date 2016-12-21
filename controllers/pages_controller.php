@@ -22,12 +22,23 @@ class PagesController
     {
         require_once('views/pages/login.php');
     }
-
+    public function account(){
+        require_once('views/users/account.php');
+    }
+    public function edit_account(){
+        require_once('views/users/edit_account.php');
+    }
     public function logout()
     {
         require_once('views/pages/logout.php');
     }
-
+    public function voorwaardes()
+    {
+        require_once('views/pages/voorwaardes.php');
+    }
+    public function huren(){
+        require_once('views/cars/huren.php');
+    }
     public function error()
     {
         require_once('views/pages/error.php');

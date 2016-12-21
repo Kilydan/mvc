@@ -19,16 +19,20 @@ function call($controller, $action)
             require_once('models/account.php');
             $controller = new AccountController();
             break;
+        case 'orders':
+            require_once('models/orders.php');
+            $controller = new OrdersController();
     }
 
     $controller->{$action}();
 }
 
 // we're adding an entry for the new controller and its actions
-$controllers = array('pages' => ['home', 'admin', 'signup', 'error', 'login'],
+$controllers = array('pages' => ['home', 'admin', 'signup', 'error', 'login', 'voorwaardes', 'huren', 'account', 'edit_account'],
                      'admin' => ['autos', 'gebruikers', 'reserveringen'],
-                     'car' => ['index', 'show'],
-                     'account' => ['signup', 'login', 'logout']);
+                     'car' => ['indexadmin', 'index', 'show', 'rent'],
+                     'account' => ['signup', 'login', 'logout', 'edit'],
+                     'orders' => ['index']);
 
 if (array_key_exists($controller, $controllers)) {
     if (in_array($action, $controllers[$controller])) {

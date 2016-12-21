@@ -23,7 +23,14 @@
 //            require_once('views/users/logout.php');
         }
         public function edit(){
-
+            $name = $_GET['name'];
+            $username = $_GET['username'];
+//            $password = $_GET['password'];
+            $address = $_GET['address'];
+            $postalcode = $_GET['postalcode'];
+            $place = $_GET['place'];
+            $edit = Account::edit($name, $username, $address, $postalcode, $place);
+            require_once('views/users/account.php');
         }
         public function get_role($gebruiker_email){
             $role = Account::get_role($gebruiker_email);

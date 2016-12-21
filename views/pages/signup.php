@@ -8,5 +8,5 @@
     <p>Adress:<input type="text" name="address" placeholder="Password"></p>
     <p>Postcode:<input type="text" name="postalcode" placeholder="Password"></p>
     <p>Plaats:<input type="text" name="place" placeholder="Password"></p>
-    <input type="submit" value="sign up!">
+    <input type="submit" value="Registreer">
 </form>

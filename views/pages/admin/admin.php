@@ -4,13 +4,13 @@ if (isset($_SESSION['user_session'])) {
         ?>
         <h1>Admin Pannel</h1>
         <h3>Auto's beheren</h3>
-        <a href="?controller=car&action=index">Auto overzicht</a><br />
+        <a href="?controller=car&action=indexadmin">Auto overzicht</a><br />
         <a href="?controller=car&action=show">Auto's wijzigen/verwijderen</a><br />
         <a href="?controller=car&action=find">Auto's toevoegen</a><br />
         <h3>Gebruikers beheren</h3>
         <a href="?controller=admin&action=gebruikers">Gebruikers</a><br />
         <h3>Reserveringen</h3>
-        <a href="?controller=admin&action=reserveringen">Reserveringen</a>
+        <a href="?controller=orders&action=index">Reserveringen</a>
 
 
 

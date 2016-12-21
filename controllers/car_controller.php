@@ -1,19 +1,32 @@
 <?php
     class CarController {
-        public function index() {
+        public function indexadmin() {
             // we store all the posts in a variable
             $cars = Car::all();
             require_once('views/pages/admin/autos.php');
         }
+        public function index() {
+            // we store all the posts in a variable
+            $cars = Car::all();
+            require_once('views/cars/index.php');
+        }
 
         public function show() {
             //we expect a url of form ?controller-post&action=show&id=x
-            // without an id we just redirect to the error page as we need the post id to find it in the database
-            if (!isset($_GET['id']))
-                return call('pages', 'error');
+            // without an id we j   ust redirect to the error page as we need the post id to find it in the database
+            if (!isset($_GET['kenteken']))
+                return call('car', 'error');
 
             // we use the given id to get the right post
-            $post = Post::find($_GET['id']);
-           // require_once('views/cars/show.php');
+            $car = Car::find($_GET['kenteken']);
+           require_once('views/cars/show.php');
+        }
+        public function rent() {
+            $kenteken = $_GET['kenteken'];
+            $start_date = $_GET['start_date'];
+            $end_date = $_GET['end_date'];
+            $rent = Car::rent($kenteken, $start_date, $end_date);
+            header("location: /views/cars/factuur.php");
+            //require_once('views/cars/huren.php');
         }
     }

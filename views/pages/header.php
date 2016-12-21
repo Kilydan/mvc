@@ -14,10 +14,12 @@
             }
         }
         ?>
-        <a href="?controller=car&action=index">Posts</a>
+        <a href="?controller=car&action=index">Showroom</a>
+        <a href="?controller=pages&action=voorwaardes">Voorwaardes</a>
         <?php
         if (isset($_SESSION['user_session'])) {
             ?>
+            <a href="?controller=pages&action=account">Mijn account</a>
             <a href="?controller=account&action=logout">logout</a>
             <?php
         } else {
