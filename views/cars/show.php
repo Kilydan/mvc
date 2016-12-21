@@ -15,7 +15,7 @@
                 Dag prijs: &euro;<?php echo $_SESSION['auto_prijs'];?>,-
             </div>
             <div class="huur-knop col-md-12">
-                <a href="?controller=pages&action=huren&kenteken=<?php echo $car->auto_kenteken; ?>"><h3>Huren</h3></a>
+                <a href="?controller=pages&action=huren"><h3>Huren</h3></a>
             </div>
         </div>
         <div class="image col-md-6">
