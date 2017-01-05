@@ -25,6 +25,9 @@ class PagesController
     public function account(){
         require_once('views/users/account.php');
     }
+    public function contact(){
+        require_once('views/pages/contact.php');
+    }
     public function edit_account(){
         require_once('views/users/edit_account.php');
     }

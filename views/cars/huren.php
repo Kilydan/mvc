@@ -1,6 +1,11 @@
 <h1>Auto Huren</h1>
 <div class="rent-view row">
     <?php if(isset($_SESSION['user_session'])){ ?>
+        <div class="input-group input-daterange">
+            <input type="date" class="form-control" value="2012-04-05">
+            <span class="input-group-addon">tot</span>
+            <input type="date" class="form-control" value="2012-04-19">
+        </div>
     <form action="" method="get" onsubmit="return dateCheck(); return false">
         <input type="hidden" name="controller" value="car">
         <input type="hidden" name="action" value="rent">

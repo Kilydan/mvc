@@ -1,6 +1,6 @@
 <div class="container">
     <div class="logo col-md-2">
-        shiny logo :O
+        Rent-A-Car
     </div>
     <div class="menu col-md-8">
         <a href="/">Home</a>
@@ -16,6 +16,7 @@
         ?>
         <a href="?controller=car&action=index">Showroom</a>
         <a href="?controller=pages&action=voorwaardes">Voorwaardes</a>
+        <a href="?controller=pages&action=contact">Contact</a>
         <?php
         if (isset($_SESSION['user_session'])) {
             ?>

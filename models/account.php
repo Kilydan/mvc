@@ -1,5 +1,4 @@
 <?php
-
 class Account
 {
     public $id;
@@ -81,7 +80,17 @@ VALUES(:gebruiker_naam, :gebruiker_email, :gebruiker_wachtwoord, :gebruiker_adre
             echo $e->getMessage();
         }
     }
-
+    public static function mail($name, $username, $bericht){
+        $to      = 'info@rentacar.com';
+        $subject = 'the subject';
+        $message = 'hello';
+        $headers = 'From: '. $username . '' . "\r\n" .
+            'Reply-To: info@rentacar.com' . "\r\n" .
+            'Van: '. $name .'' . "\r\n" .
+            'Bericht: ' . $bericht . '' . "\r\n";
+        // werkt nog niet, maar komt door localhost
+        mail($to, $subject, $message, $headers);
+    }
     public static function edit($name, $username, $address, $postalcode, $place){
         try {
             $db = Db::getInstance();

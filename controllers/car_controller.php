@@ -27,7 +27,7 @@
             $start_date = $_GET['start_date'];
             $end_date = $_GET['end_date'];
             $rent = Car::rent($kenteken, $start_date, $end_date);
-            header("location: /views/cars/factuur.php");
-            //require_once('views/cars/huren.php');
+            //header("location: /views/cars/factuur.php");
+            require_once('views/pages/bedankt.php');
         }
     }

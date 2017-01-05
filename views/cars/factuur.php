@@ -125,8 +125,10 @@
             <?php echo $_SESSION['auto_prijs']; ?>
         </td>
         <td style="width:20%">
-            <?php $totaal_prijs = $_SESSION['auto_prijs'] * $date_diff / 100 * 121;
-            echo $totaal_prijs; ?>
+            <?php $subtotaal_prijs = $_SESSION['auto_prijs'] * $date_diff;
+            echo $subtotaal_prijs .',-'; //bereken: dagprijs x dagen / 100 x 121 ?>
+<!--            --><?php //$totaal_prijs = $_SESSION['auto_prijs'] * $date_diff / 100 * 121;
+//            echo $totaal_prijs; ?>
         </td>
     </tr>
     <tr>
@@ -152,11 +154,9 @@
 
         </td>
         <td style="width:20%">
-            Subtotaal
+
         </td>
         <td style="width:20%">
-            <?php $subtotaal_prijs = $_SESSION['auto_prijs'] * $date_diff;
-            echo $subtotaal_prijs .',-'; //bereken: dagprijs x dagen / 100 x 121 ?>
 
         </td>
     </tr>

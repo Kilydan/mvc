@@ -1,7 +1,7 @@
 <div class="container">
     <?php
     if (isset($_SESSION['user_session'])) {
-        echo $_SESSION['username'];
+        echo 'Welkom ' . $_SESSION['username'];
     }else{
         echo 'Welkom!';
     }?>

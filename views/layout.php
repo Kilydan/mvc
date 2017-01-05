@@ -1,8 +1,4 @@
-<?php
-session_start();
 
-
-?>
 <DOCTYPE html>
     <html>
     <head>
@@ -13,9 +9,13 @@ session_start();
         <link rel="stylesheet" type="text/css" href="views/css/footer.css">
         <link rel="stylesheet" type="text/css" href="views/css/bootstrap/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     </head>
     <body>
+    <?php
+    session_start();
+
+    ?>
 <!--    <div class="wrapper">-->
         <div class="mini-header col-md-12">
             <?php require_once('views/pages/miniheader.php'); ?>

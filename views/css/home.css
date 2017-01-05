@@ -1,6 +1,6 @@
 body {
   height: 100%; }
-  body .col-md-* {
+  body .col-md- * {
     padding: 0 !important; }
 
 .row {
@@ -13,9 +13,13 @@ body {
     position: relative;
     height: 300px; }
     .main-wrapper .main .container .showroom .car-image {
-      width: 100%; }
+      width: 100%;
+      height: 175px; }
     .main-wrapper .main .container .showroom img {
       width: 100%;
+      height: 100%; }
+    .main-wrapper .main .container .showroom .image img {
+      width: auto;
       height: 175px; }
     .main-wrapper .main .container .showroom .huren {
       width: 100%;

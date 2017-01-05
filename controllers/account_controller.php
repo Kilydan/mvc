@@ -18,6 +18,12 @@
         }
         public function is_loggedin(){
         }
+
+        public function invoices(){
+            $usersession = $_SESSION['user_session'];
+            $facturen = Account::invoices($usersession);;
+            require_once('views/pages/facturen.php');
+        }
         public function logout(){
             $logout = Account::logout();
 //            require_once('views/users/logout.php');
@@ -34,5 +40,11 @@
         }
         public function get_role($gebruiker_email){
             $role = Account::get_role($gebruiker_email);
+        }
+        public function mail(){
+            $name = $_GET['username'];
+            $username = $_GET['user_email'];
+            $bericht = $_GET['bericht'];
+            $mail = Account::mail($name, $username, $bericht);
         }
     }
