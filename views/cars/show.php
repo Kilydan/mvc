@@ -15,7 +15,12 @@
                 Dag prijs: &euro;<?php echo $_SESSION['auto_prijs'];?>,-
             </div>
             <div class="huur-knop col-md-12">
-                <a href="?controller=pages&action=huren"><h3>Huren</h3></a>
+                <a href="?controller=orders&action=dates"><h3>Huren</h3></a>
+                <?php if(isset ($_SESSION['user_session'])){
+                    if($_SESSION['role'] == 3){
+                        echo "<a href='?controller=pages&action=changeCar'>Wijzig auto</a>";
+                    }
+                } ?>
             </div>
         </div>
         <div class="image col-md-6">

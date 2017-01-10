@@ -1,4 +1,10 @@
 <h1>Auto overzicht</h1>
+<?php
+    if(isset ($_SESSION['user_session'])){
+        if($_SESSION['role'] == 3){
+            echo "Mocht u de auto willen bekijken of bewerken kunt u een auto bekijken, daar is de optie beschikbaar om de auto te wijzigen";
+        }
+    } ?>
 <div class="showroom-wrapper row">
     <?php foreach ($cars as $car) { ?>
         <div class="showroom col-md-4">

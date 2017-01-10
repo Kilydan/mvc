@@ -19,11 +19,6 @@
         public function is_loggedin(){
         }
 
-        public function invoices(){
-            $usersession = $_SESSION['user_session'];
-            $facturen = Account::invoices($usersession);;
-            require_once('views/pages/facturen.php');
-        }
         public function logout(){
             $logout = Account::logout();
 //            require_once('views/users/logout.php');

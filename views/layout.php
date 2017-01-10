@@ -1,6 +1,4 @@
-
-<DOCTYPE html>
-    <html>
+<html>
     <head>
         <title>Rent a Car</title>
         <link rel="stylesheet" type="text/css" href="views/css/header.css">
@@ -8,6 +6,9 @@
         <link rel="stylesheet" type="text/css" href="views/css/home.css">
         <link rel="stylesheet" type="text/css" href="views/css/footer.css">
         <link rel="stylesheet" type="text/css" href="views/css/bootstrap/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     </head>

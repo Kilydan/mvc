@@ -8,7 +8,7 @@ class Factuur
 
     public function __construct($factuurnummer, $orderdatum, $medewerker_id, $klant_id)
     {
-        $this->id = $id;
+        $this->id = $klant_id;
         $name = $_GET['name'];
         $username = $_GET['username'];
         $password = $_GET['password'];

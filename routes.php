@@ -28,11 +28,11 @@ function call($controller, $action)
 }
 
 // we're adding an entry for the new controller and its actions
-$controllers = array('pages' => ['home', 'admin', 'signup', 'error', 'login', 'voorwaardes', 'huren', 'account', 'edit_account', 'contact'],
+$controllers = array('pages' => ['home', 'admin', 'signup', 'error', 'login', 'voorwaardes', 'huren', 'account', 'edit_account', 'contact', 'changeCar', 'addCar'],
                      'admin' => ['autos', 'gebruikers', 'reserveringen'],
-                     'car' => ['indexadmin', 'index', 'show', 'rent'],
-                     'account' => ['signup', 'login', 'logout', 'edit', 'invoices', 'mail'],
-                     'orders' => ['index']);
+                     'car' => ['indexadmin', 'index', 'show', 'rent', 'addCar', 'change', 'remove'],
+                     'account' => ['signup', 'login', 'logout', 'edit', 'mail'],
+                     'orders' => ['index', 'dates', 'afhandelen', 'remove', 'invoices']);
 
 if (array_key_exists($controller, $controllers)) {
     if (in_array($action, $controllers[$controller])) {

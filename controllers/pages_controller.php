@@ -13,6 +13,13 @@ class PagesController
     {
         require_once('views/pages/admin/admin.php');
     }
+    public function addCar()
+    {
+        require_once('views/pages/admin/addcar.php');
+    }
+    public function changeCar(){
+        require_once('views/pages/admin/changecar.php');
+    }
     public function signup()
     {
         require_once('views/pages/signup.php');

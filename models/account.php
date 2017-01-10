@@ -91,6 +91,8 @@ VALUES(:gebruiker_naam, :gebruiker_email, :gebruiker_wachtwoord, :gebruiker_adre
         // werkt nog niet, maar komt door localhost
         mail($to, $subject, $message, $headers);
     }
+
+
     public static function edit($name, $username, $address, $postalcode, $place){
         try {
             $db = Db::getInstance();

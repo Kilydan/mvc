@@ -1,1 +1,1 @@
-<p>verkeerde pagina kut!</p>
+<p>U bent op een niet bestaande pagina terecht gekomen, navigeer terug om verder te gaan</p>

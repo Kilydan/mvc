@@ -40,6 +40,7 @@ class Car
         // we make sure the $id is an int
         $req = $db->prepare('SELECT * FROM autos WHERE auto_kenteken=:auto_kenteken');
         // the query was prepared, now we replace :id with our actual $id value
+
         $req->execute(array('auto_kenteken' => $auto_kenteken));
         $carRow = $req->fetch(PDO::FETCH_ASSOC);
         if($req->rowCount() > 0){
@@ -54,8 +55,60 @@ class Car
         return new Car($car['auto_kenteken'], $car['auto_merk'], $car['auto_type'], $car['auto_prijs'], $car['auto_beschrijving'], $car['auto_image']);
     }
 
+    public static function addCar($kenteken, $brand, $type, $price, $description, $image)
+    {
+        try {
+            $db = Db::getInstance();
+            $ins = $db->prepare('
+INSERT INTO autos(auto_kenteken, auto_merk, auto_type, auto_prijs, auto_beschrijving, auto_image)
+VALUES(:auto_kenteken, :auto_merk, :auto_type, :auto_prijs, :auto_beschrijving, :auto_image)');
+//die(print_r($ins));
+            $ins->bindParam(":auto_kenteken", $kenteken);
+            $ins->bindParam(":auto_merk", $brand);
+            $ins->bindParam(":auto_type", $type);
+            $ins->bindParam(":auto_prijs", $price);
+            $ins->bindParam(":auto_beschrijving", $description);
+            $ins->bindParam(":auto_image", $image);
+            $ins->execute();
+
+            return $ins;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+    public static function change($auto_kenteken, $brand, $type, $price, $description, $image){
+       try {
+           $db = Db::getInstance();
+           $ins = $db->prepare('UPDATE autos SET auto_kenteken=:auto_kenteken, auto_merk=:auto_brand, auto_type=:auto_type, auto_prijs=:auto_price, auto_beschrijving=:auto_description, auto_image=:auto_image WHERE auto_kenteken=:auto_kenteken');
+           $ins->bindParam(":auto_kenteken", $auto_kenteken);
+           $ins->bindParam(":auto_brand", $brand);
+           $ins->bindParam(":auto_type", $type);
+           $ins->bindParam(":auto_price", $price);
+           $ins->bindParam(":auto_description", $description);
+           $ins->bindParam(":auto_image", $image);
+           $ins->execute();
+
+           return $ins;
+       } catch (PDOException $e){
+           echo $e->getMessage();
+       }
+    }
+    public static function remove($auto_kenteken){
+        try {
+            $db = Db::getInstance();
+            $rem = $db->prepare('DELETE autos, reservering FROM autos INNER JOIN reservering WHERE autos.auto_kenteken=:auto_kenteken and reservering.auto_kenteken=:auto_kenteken');
+
+            $rem->bindParam(":auto_kenteken", $auto_kenteken);
+            $rem->execute();
+
+            return $rem;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
     public static function rent($kenteken, $start_date, $end_date)
     {
+        date_default_timezone_set('Europe/Amsterdam');
         $start_date = strtotime($start_date);
         $start_date = date('Y-m-d', $start_date);
 
@@ -118,4 +171,5 @@ class Car
             echo $e->getMessage();
         }
     }
+
 }
